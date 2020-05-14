@@ -200,10 +200,12 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13828}
     - Class: 114
-      Script: {instanceID: 118348}
+      Script: {instanceID: 16170}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -427,6 +429,8 @@ ScriptsOnlyBuild:
     - Class: 124
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -942,7 +946,7 @@ ScriptsOnlyBuild:
     className: ARCoreLoaderSettings
   - hash:
       serializedVersion: 2
-      Hash: 85a91587bfa5203a62b83afab78f8932
+      Hash: 4e226e80fa4fb13848aaf30493bcb07e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameFunctional
@@ -1200,7 +1204,7 @@ ScriptsOnlyBuild:
     className: ARCameraManager
   - hash:
       serializedVersion: 2
-      Hash: cb61145b59aeff0511f69d457cfc6527
+      Hash: e0afb7786ca1d404160316e71ec69503
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnController

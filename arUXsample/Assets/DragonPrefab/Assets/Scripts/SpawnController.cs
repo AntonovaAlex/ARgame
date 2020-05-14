@@ -22,6 +22,10 @@ public class SpawnController : MonoBehaviour {
 	public GameObject cannon2;
 	public GameObject cannon3;
 
+	public Transform cannon1Spawn;
+	public Transform cannon2Spawn;
+	public Transform cannon3Spawn;
+
 	void Start()
 	{
 		StartCoroutine (SpawnWaves ());
@@ -46,18 +50,23 @@ public class SpawnController : MonoBehaviour {
 
 					//yield return new WaitForSeconds(spawnWait);
 
-					GameObject bullet = Instantiate(Resources.Load("eBullet", typeof(GameObject))) as GameObject;
+					//GameObject bullet = Instantiate(Resources.Load("eBullet", typeof(GameObject))) as GameObject;
+					GameObject bullet = Instantiate(Resources.Load("BulletCannon1", typeof(GameObject)), cannon1Spawn, false) as GameObject;
+
 					Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
 
 					Vector3 bullet3Rotation = new Vector3(cannon1.transform.rotation.x, cannon1.transform.rotation.y, cannon1.transform.rotation.z);
 
 					bullet.transform.rotation = Quaternion.Euler(bullet3Rotation);
-					bullet.transform.position = new Vector3(cannon1.transform.position.x + 0.13f, cannon1.transform.position.y + 0.051f, cannon1.transform.position.z + 0.002f);
 
 
 
-					rb.AddForce(cannon1.transform.forward * 30f);
+					//bullet.transform.position = new Vector3(cannon1.transform.localPosition.x + 0.13f, cannon1.transform.localPosition.y + 0.051f, cannon1.transform.localPosition.z + 0.002f); 
+
+
+
+					rb.AddForce(cannon1.transform.forward * 20f);
 					yield return new WaitForSeconds(spawnWait);
 					Destroy(bullet, 1.5f);
 
@@ -79,18 +88,20 @@ public class SpawnController : MonoBehaviour {
 
 
 
-					GameObject bullet = Instantiate(Resources.Load("eBullet", typeof(GameObject))) as GameObject;
+					//GameObject bullet = Instantiate(Resources.Load("eBullet", typeof(GameObject))) as GameObject;
+					GameObject bullet = Instantiate(Resources.Load("BulletCannon1", typeof(GameObject)), cannon2Spawn, false) as GameObject;
+
 					Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
 					
 					Vector3 bullet3Rotation = new Vector3(cannon2.transform.rotation.x, cannon2.transform.rotation.y, cannon2.transform.rotation.z);
 
 					bullet.transform.rotation = Quaternion.Euler(bullet3Rotation);
-					bullet.transform.position = new Vector3(cannon2.transform.position.x + 0.13f, cannon2.transform.position.y + 0.051f, cannon2.transform.position.z + 0.002f);
+					//bullet.transform.position = new Vector3(cannon2.transform.localPosition.x + 0.13f, cannon2.transform.localPosition.y + 0.051f, cannon2.transform.localPosition.z + 0.002f); 
 					
 
 
-					rb.AddForce(cannon2.transform.forward * 30f);
+					rb.AddForce(cannon2.transform.forward * 20f);
 					yield return new WaitForSeconds(spawnWait);
 
 
@@ -106,14 +117,16 @@ public class SpawnController : MonoBehaviour {
 					//Vector3 spawnPosition = new Vector3(cannon3.transform.position.x + 0.13f, cannon3.transform.position.y + 0.163f, cannon3.transform.position.z + 0.002f);
 					//Rigidbody ballRb = cannonBall.GetComponent<Rigidbody>();
 
-					GameObject bullet = Instantiate(Resources.Load("eBullet", typeof(GameObject))) as GameObject;
+					//GameObject bullet = Instantiate(Resources.Load("eBullet", typeof(GameObject))) as GameObject;
+					GameObject bullet = Instantiate(Resources.Load("BulletCannon1", typeof(GameObject)), cannon3Spawn, false) as GameObject;
+
 					Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
 					//Vector3 spawnPosition = new Vector3(cannon3.transform.position.x + 0.13f, cannon3.transform.position.y + 0.051f, cannon3.transform.position.z + 0.002f);
 					Vector3 bullet3Rotation = new Vector3(cannon3.transform.rotation.x, cannon3.transform.rotation.y, cannon3.transform.rotation.z);
 
 					bullet.transform.rotation = Quaternion.Euler(bullet3Rotation);
-					bullet.transform.position = new Vector3(cannon3.transform.position.x + 0.13f, cannon3.transform.position.y + 0.051f, cannon3.transform.position.z + 0.002f);
+					//bullet.transform.position = new Vector3(cannon3.transform.localPosition.x + 0.13f, cannon3.transform.localPosition.y + 0.051f, cannon3.transform.localPosition.z + 0.002f); 
 					//Quaternion spawnRotation = Quaternion.identity;
 					//Quaternion spawnRotation = Quaternion.Euler(0, 90, 0);
 					//Quaternion spawnRotation = Quaternion.Euler(0.0f, -90f, 0.0f);
@@ -121,7 +134,7 @@ public class SpawnController : MonoBehaviour {
 					//Instantiate(cannonBall, spawnPosition, spawnRotation);
 
 					
-					rb.AddForce(cannon3.transform.forward * 30f);
+					rb.AddForce(cannon3.transform.forward * 20f);
 					yield return new WaitForSeconds(spawnWait);
 
 					Destroy(bullet, 1.5f);

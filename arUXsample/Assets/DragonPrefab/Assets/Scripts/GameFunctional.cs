@@ -21,6 +21,8 @@ public class GameFunctional : MonoBehaviour {
 
 	public GameObject spawnObject;
 
+	public Transform dragonFlame;
+
 
 	//public float range = 100f; 
 
@@ -28,7 +30,8 @@ public class GameFunctional : MonoBehaviour {
 	{
 		attackSound.Play();
 
-		GameObject bullet = Instantiate(Resources.Load("bulletdr", typeof(GameObject))) as GameObject;
+		GameObject bullet = Instantiate(Resources.Load("bulletdr", typeof(GameObject)), dragonFlame, false) as GameObject;
+		//GameObject bullet = Instantiate(Resources.Load("bulletdr", dragonFlame, false) as GameObject;
 		Rigidbody rb = bullet.GetComponent<Rigidbody>();
 		//bullet.transform.rotation = dragon.transform.rotation;
 		bullet.transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -38,7 +41,8 @@ public class GameFunctional : MonoBehaviour {
 
 
 		//bullet.transform.position = new Vector3(dragon.transform.position.x, dragon.transform.position.y + 0.15f, dragon.transform.position.z);
-		bullet.transform.position = new Vector3(dragon.transform.position.x -0.09f, dragon.transform.position.y + 0.06f, dragon.transform.position.z - 0.0f);
+
+		//bullet.transform.position = new Vector3(dragon.transform.position.x -0.09f, dragon.transform.position.y + 0.06f, dragon.transform.position.z - 0.0f); было до
 
 		//bullet.transform.position -= new Vector3(1, 0, 0);
 		//rb.AddForce(dragon.transform.forward * 500f);
